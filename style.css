@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+/* Linkedin Shayan Shah */
+
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +11,7 @@
 }
 
 .container {
+  position: relative;
   background: #f0f3fd;
   color: #333;
 }
@@ -48,6 +51,10 @@
   display: flex;
   font-size: 24px;
   cursor: pointer;
+}
+
+.toggle-icon.disabled {
+  pointer-events: none;
 }
 
 .home {
@@ -122,7 +129,40 @@
 .home-img img {
   position: absolute;
   bottom: 0;
-  right: 30px;
-  width: 38%;
+  right: 90px;
+  width: 32%;
   pointer-events: none;
+}
+
+#dark-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #15202b;
+  width: 100%;
+  color: #f0f3fd;
+}
+
+#dark-container .logo,
+#dark-container .navbar a {
+  color: #f0f3fd;
+}
+
+#dark-container .navbar a:hover,
+#dark-container .navbar a.active {
+  color: #37a1f2;
+}
+
+#container,
+#dark-container {
+  clip-path: circle(0% at 0 0);
+  transition-delay: 1.5s;
+}
+
+.active#container,
+.active#dark-container {
+  z-index: 1;
+  clip-path: circle(150% at 0 0);
+  transition: 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-delay: 0s;
 }
